@@ -1,0 +1,12 @@
+body {
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: auto;
+}
+
+a {
+  color: initial;
+  text-decoration: none;
+}
