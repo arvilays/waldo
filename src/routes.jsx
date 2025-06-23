@@ -14,7 +14,7 @@ const routes = [
         element: <Home />,
       },
       {
-        path: "play/:nameShort?",
+        path: "play/:slug?",
         element: <Play />,
       },
     ],

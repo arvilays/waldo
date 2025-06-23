@@ -32,7 +32,7 @@ function Home() {
         <div className="home-title">find & seek</div>
         <div className="home-window">
           {maps.map(map => (
-            <Link to={`/play/${map.nameShort}`} className="home-scenario" key={map.id}>
+            <Link to={`/play/${map.slug}`} className="home-scenario" key={map.id}>
               <img className="home-scenario-image" src={map.thumbnailUrl} alt={map.name} />
               <div className="home-scenario-name">{map.name}</div>
             </Link>
