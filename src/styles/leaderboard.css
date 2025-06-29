@@ -1,0 +1,42 @@
+.leaderboard-container {
+  font-family: "dotgothic16";
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.leaderboard-title {
+  padding: 20px;
+}
+
+.leaderboard-slug {
+  background-color: black;
+  color: white;
+}
+
+.leaderboard-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.leaderboard-entry {
+  padding: 10px;
+}
+
+.leaderboard-entry:nth-child(even) {
+  background-color: rgb(217, 242, 250);
+}
+
+.leaderboard-home-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 50px;
+
+  transition: opacity 0.25s;
+  will-change: opacity;
+}
+
+.leaderboard-home-button:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}

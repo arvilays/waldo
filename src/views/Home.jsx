@@ -21,7 +21,7 @@ function Home() {
       }
     };
     fetchMaps();
-  }, []);
+  }, [apiClient]);
 
   if (loading) return <p>Loading maps...</p>;
   if (error) return <p>Error: {error}</p>;
@@ -29,11 +29,16 @@ function Home() {
   return (
     <div className="home-container">
       <div className="home-main">
-        <div className="home-title">find & seek</div>
+        <div className="home-title">FinD & SeeK</div>
         <div className="home-window">
           {maps.map(map => (
             <Link to={`/play/${map.slug}`} className="home-scenario" key={map.id}>
-              <img className="home-scenario-image" src={map.thumbnailUrl} alt={map.name} />
+              <img
+                className="home-scenario-image"
+                src={map.thumbnailUrl}
+                alt={map.name}
+                title={`Image Source: ${map.imageCreator}`}
+              />
               <div className="home-scenario-name">{map.name}</div>
             </Link>
           ))}
@@ -44,12 +49,3 @@ function Home() {
 };
 
 export default Home;
-
-/*
-{Array.from({ length: 7 }, (_, i) => (
-  <Link to={`/play/${i + 1}`} className="home-scenario" key={i}>
-    <div className="home-scenario-image"></div>
-    <div className="home-scenario-name">Map {i + 1}</div>
-  </Link>
-))}
-*/

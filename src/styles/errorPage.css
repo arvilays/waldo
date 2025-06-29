@@ -9,9 +9,17 @@
 }
 
 .error-title {
+  font-family: "dotgothic16";
   font-size: 8em;
 }
 
 .error-description {
+  font-family: "dotgothic16";
   font-size: 2em;
+}
+
+.cleanup {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
 }

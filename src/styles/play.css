@@ -1,9 +1,34 @@
+/* === Layout Containers === */
 .play-container {
   background-color: black;
   height: 100%;
   overflow: hidden;
 }
 
+.play-area {
+  overflow: auto;
+  height: 100vh;
+}
+
+/* === Play Image === */
+.play-image {
+  display: block;
+  cursor: crosshair;
+  user-select: none;
+  opacity: 0;
+  transition: opacity 1s;
+  will-change: opacity;
+}
+
+.horizontal {
+  height: 100%;
+}
+
+.vertical {
+  width: 100%;
+}
+
+/* === Draggable Findables Window === */
 .play-findables {
   cursor: grab;
   display: flex;
@@ -14,12 +39,12 @@
   box-shadow: 5px 5px 20px rgb(53, 53, 53);
 }
 
+/* === Findable Cards === */
 .findable {
   background-color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 5px;
   padding: 8px 8px 4px;
   border-radius: 10px;
   box-shadow: 5px 5px 5px grey;
@@ -34,27 +59,142 @@
 }
 
 .findable-name {
-  font-family: "bebas neue";
-  font-size: 1em;
-  /* color: lightgrey;
-  text-decoration: line-through; */
+  font-family: "dotgothic16";
+  font-size: 0.8em;
 }
 
-.play-area {
-  overflow: auto;
-  height: 100vh;
+.findable.found {
+  filter: grayscale(100%);
+  opacity: 0.5;
 }
 
-.play-image {
-  display: block;
-  cursor: crosshair;
+/* === Magnifier & Action Bubbles === */
+.magnifier-ui {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 2000;
+}
+
+.magnifier {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.5);
+  border: 3px solid black;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+.bubble-container {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  pointer-events: auto;
+}
+
+.bubble {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  cursor: pointer;
   user-select: none;
 }
 
-.horizontal {
-  height: 100%;
+.bubble.check {
+  background-color: #4caf50;
+  color: white;
 }
 
-.vertical {
-  width: 100%;
+.bubble.cancel {
+  background-color: #f44336;
+  color: white;
+}
+
+/* === Status Message === */
+.status-message {
+  font-family: "dotgothic16";
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #222;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  z-index: 10000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* === End Screen === */
+.end-screen {
+  font-family: "dotgothic16";
+  background-color: white;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  padding: 30px;
+
+  border-radius: 20px;
+  box-shadow: 5px 5px 10px grey;
+}
+
+.end-screen input,
+.end-screen button {
+  font-family: "dotgothic16";
+  font-size: 1em;
+  padding: 8px;
+}
+
+.end-title {
+  font-family: "major mono display";
+  font-size: 3em;
+  font-weight: 600;
+}
+
+.end-time {
+  background-color: black;
+  color: white;
+  padding: 10px;
+}
+
+.end-links {
+  display: flex;
+  gap: 10px;
+}
+
+.end-screen a {
+  background-color: grey;
+  color: white;
+  padding: 6px 8px;
+  border-radius: 10px;
+  box-shadow: 4px 4px 2px rgb(212, 212, 212);
+  transition: background-color 0.2s;
+}
+
+.end-screen a:hover {
+  background-color: black;
 }
