@@ -80,7 +80,7 @@
   width: 80px;
   height: 80px;
   background: rgba(255, 255, 255, 0.5);
-  border: 3px solid black;
+  border: 3px solid white;
   border-radius: 50%;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
   pointer-events: none;
@@ -107,7 +107,7 @@
   height: 32px;
   border-radius: 50%;
   background: white;
-  border: 2px solid black;
+  border: 2px solid white;
   display: flex;
   align-items: center;
   justify-content: center;
