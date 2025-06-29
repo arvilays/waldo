@@ -50,15 +50,18 @@ function Home() {
         <div className="home-title">FinD & SeeK</div>
         <div className="home-window">
           {maps.map(map => (
-            <Link to={`/play/${map.slug}`} className="home-scenario" key={map.id}>
-              <img
-                className="home-scenario-image"
-                src={map.thumbnailUrl}
-                alt={map.name}
-                title={`Image Source: ${map.imageCreator}`}
-              />
-              <div className="home-scenario-name">{map.name}</div>
-            </Link>
+            <div className="home-map">
+              <Link to={`/play/${map.slug}`} className="home-scenario" key={map.id}>
+                <img
+                  className="home-scenario-image"
+                  src={map.thumbnailUrl}
+                  alt={map.name}
+                  title={`Image Source: ${map.imageCreator}`}
+                />
+                <div className="home-scenario-name">{map.name}</div>
+              </Link>
+              <Link to={`/leaderboard/${map.slug}`} className="home-map-leaderboard">🏆</Link>
+            </div>
           ))}
         </div>
       </div>

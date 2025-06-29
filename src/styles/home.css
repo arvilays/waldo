@@ -61,3 +61,22 @@
   border: 2px solid grey;
   border-radius: 20px;
 }
+
+.home-map-leaderboard {
+  background-color: white;
+  font-size: 1.25em;
+  position: absolute;
+  padding: 5px;
+  bottom: 20px;
+  border: 2px solid black;
+  border-radius: 50%;
+  box-shadow: 2px 2px 5px rgb(168, 168, 168);
+
+  transition: border 0.15s;
+  will-change: border;
+}
+
+.home-map-leaderboard:hover {
+  cursor: pointer;
+  border: 2px solid white;
+}
