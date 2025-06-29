@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useParams, useOutletContext, useNavigate } from "react-router-dom";
 import { formatDuration } from "../helpers";
+import Status from "../components/Status";
 import "../styles/play.css";
 
 function Play() {
@@ -155,8 +156,25 @@ function Play() {
     }
   };
 
-  if (loading) return <p>Loading map...</p>;
-  if (error) return <p>Error: {error}</p>;
+  if (loading) {
+    return (
+      <Status
+        title="loading map..."
+        description="(check back in a couple minutes!)"
+        type="loading"
+      />
+    );
+  }
+
+  if (error) {
+    return (
+      <Status
+        title="error"
+        description={error}
+        type="error"
+      />
+    );
+  }
 
   return (
     <div className="play-container" onClick={handleOutsideClick}>

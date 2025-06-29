@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useOutletContext } from "react-router-dom";
+import Status from "../components/Status";
 import "../styles/home.css";
 
 function Home() {
@@ -23,8 +24,25 @@ function Home() {
     fetchMaps();
   }, [apiClient]);
 
-  if (loading) return <p>Loading maps...</p>;
-  if (error) return <p>Error: {error}</p>;
+  if (loading) {
+    return (
+      <Status
+        title="waking up servers..."
+        description="(check back in a couple minutes!)"
+        type="wake"
+      />
+    );
+  }
+
+  if (error) {
+    return (
+      <Status
+        title="error"
+        description={error}
+        type="error"
+      />
+    );
+  }
 
   return (
     <div className="home-container">

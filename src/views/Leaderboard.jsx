@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useParams, useOutletContext } from "react-router-dom";
 import { formatDuration } from "../helpers";
+import Status from "../components/Status";
 import "../styles/leaderboard.css";
 import homeIcon from "../assets/home-circle-outline.svg";
 
@@ -26,8 +27,25 @@ function Leaderboard() {
     fetchLeaderboardData();
   }, [slug, apiClient]);
 
-  if (loading) return <p>Loading leaderboard...</p>;
-  if (error) return <p>Error: {error}</p>;
+  if (loading) {
+    return (
+      <Status
+        title="loading leaderboard..."
+        description="(check back in a couple minutes!)"
+        type="loading"
+      />
+    );
+  }
+
+  if (error) {
+    return (
+      <Status
+        title="error"
+        description={error}
+        type="error"
+      />
+    );
+  }
 
   return (
     <div className="leaderboard-container">
