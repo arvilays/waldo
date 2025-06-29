@@ -1,4 +1,4 @@
-const API_BASE_URL = "https://waldo-api-ivmo.onrender.com";
+const API_BASE_URL = "https://waldo-api-ivmo.onrender.com/api";
 
 const apiClient = {
   async request(endpoint, { method = "GET", data = null } = {}) {
