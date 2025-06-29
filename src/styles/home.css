@@ -80,3 +80,13 @@
   cursor: pointer;
   border: 2px solid white;
 }
+
+.credits {
+  font-family: "major mono display";
+  font-size: 0.75em;
+
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

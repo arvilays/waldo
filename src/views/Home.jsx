@@ -65,6 +65,8 @@ function Home() {
           ))}
         </div>
       </div>
+
+      <div className="credits">hidden object project by <a href="https://github.com/arvilays">arvilays</a></div>
     </div>
   );
 };
