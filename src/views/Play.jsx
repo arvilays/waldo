@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Link, useParams, useOutletContext, useNavigate } from "react-router-dom";
 import { formatDuration } from "../helpers";
 import Status from "../components/Status";
+import DelayedLoader from "../components/DelayedLoader";
 import "../styles/play.css";
 
 function Play() {
@@ -158,7 +159,8 @@ function Play() {
 
   if (loading) {
     return (
-      <Status
+      <DelayedLoader
+        show={loading}
         title="loading map..."
         description="(check back in a couple minutes!)"
         type="loading"

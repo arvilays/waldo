@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useOutletContext } from "react-router-dom";
 import Status from "../components/Status";
+import DelayedLoader from "../components/DelayedLoader";
 import "../styles/home.css";
 
 function Home() {
@@ -26,7 +27,8 @@ function Home() {
 
   if (loading) {
     return (
-      <Status
+      <DelayedLoader
+        show={loading}
         title="waking up servers..."
         description="(check back in a couple minutes!)"
         type="wake"

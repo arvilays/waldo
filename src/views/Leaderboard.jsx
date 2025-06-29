@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useParams, useOutletContext } from "react-router-dom";
 import { formatDuration } from "../helpers";
 import Status from "../components/Status";
+import DelayedLoader from "../components/DelayedLoader";
 import "../styles/leaderboard.css";
 import homeIcon from "../assets/home-circle-outline.svg";
 
@@ -29,7 +30,8 @@ function Leaderboard() {
 
   if (loading) {
     return (
-      <Status
+      <DelayedLoader
+        show={loading}
         title="loading leaderboard..."
         description="(check back in a couple minutes!)"
         type="loading"
