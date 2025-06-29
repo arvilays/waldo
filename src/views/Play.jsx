@@ -97,7 +97,7 @@ function Play() {
         setMessage(`🎯 ${res.findableName} found!`);
         if (res.allFound) {
           setMessage("✅ All targets found! Game complete!");
-          setGameTime(res.gameSession.durationSeconds);
+          setGameTime(res.gameSession.durationMilliseconds);
           setGameFinished(true);
         }
       } else {

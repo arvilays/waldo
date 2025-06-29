@@ -57,7 +57,7 @@ function Leaderboard() {
       <div className="leaderboard-list">
         {leaderboardData && leaderboardData.map((entry, index) => (
           <div className="leaderboard-entry" key={entry.playerName}>
-            {index + 1}. {entry.playerName}: {formatDuration(entry.durationSeconds)}
+            {index + 1}. {entry.playerName}: {formatDuration(entry.durationMilliseconds)}
           </div>
         ))}
       </div>
